@@ -1,0 +1,225 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.main-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Desktop Nav */
+.header-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  color: rgb(52, 152, 219);
+}
+
+/* Mobile / Tablet Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Page Title */
+.blog-title {
+  text-align: center;
+  margin: 40px 0 30px;
+  font-size: 2rem;
+  color: black;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding-bottom: 60px;
+}
+
+.blog-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.blog-item .img {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.blog-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin: 12px 15px 6px;
+}
+
+.blog-item p {
+  font-size: 15px;
+  color: black;
+  margin: 0 15px 15px;
+}
+
+/* Delete Icon */
+.delete-icon {
+  position: absolute;
+  top: 0PX;
+  right: 0PX;
+  width: 40px;
+  height: 40px;
+  background-color: #e74c3c; /* أحمر */
+  color: white;
+  border-radius: 50%; /* دائرة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+/* New Blog Form */
+.new-blog-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 50px;
+}
+
+.new-blog-form h2 {
+  margin-bottom: 15px;
+}
+
+.new-blog-form input,
+.new-blog-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.new-blog-form button {
+  padding: 10px 18px;
+  margin-top: 12px;
+  background-color: rgb(52, 152, 219);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.new-blog-form button:hover {
+  background-color: rgb(41, 128, 185);
+}
+
+/* Footer */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .menu-icon { display: block; }
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    background: black;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+  }
+  .header-nav a { display: block; padding: 12px 0; }
+  #menu-toggle:checked ~ .header-nav { display: block; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* Tablet */
+@media (min-width: 651px) and (max-width: 900px) {
+  .menu-icon { display: block; }
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    background: black;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+  }
+  .header-nav a { display: block; padding: 12px 0; }
+  #menu-toggle:checked ~ .header-nav { display: block; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 901px) {
+  .menu-icon { display: none; }
+  .header-nav { display: flex; position: static; background: none; border-radius: 0; padding: 0; }
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="master.css">
+  <title>Blog</title>
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    <div class="main-logo">BLOG</div>
+
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <input type="checkbox" id="menu-toggle">
+
+    <nav class="header-nav">
+      <a href="#">Home</a>
+      <a href="#new-blog">Add New Blog</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <h1 class="blog-title">BLOG</h1>
+    
+    <!-- Blogs Section -->
+    <section class="cards-grid" id="blogs-container">
+      <!-- Blogs will be rendered here by JS -->
+    </section>
+
+    <!-- New Blog Form -->
+    <section class="new-blog-form" id="new-blog">
+      <h2>Add New Blog</h2>
+      <form id="blog-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Blog Title" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Blog Description" required></textarea>
+
+        <button type="submit">Submit</button>
+        <p id="form-error" style="color:red; margin-top:5px;"></p>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 — GitHub</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
