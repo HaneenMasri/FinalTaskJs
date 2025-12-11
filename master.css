@@ -155,7 +155,7 @@ header {
   font-size: 14px;
 }
 .new-blog-form input {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .new-blog-form button {
@@ -191,9 +191,9 @@ header {
   .header-nav {
     display: none;
     position: absolute;
-    top: 70px;          /* بدل 60% */
+    top: 70px;         
     right: 20px;
-    width: 200px;       /* عرض مناسب للموبايل */
+    width: 200px;       
     background: black;
     border-radius: 8px;
     text-align: center;
@@ -222,9 +222,9 @@ header {
   .header-nav {
     display: none;
     position: absolute;
-    top: 70px;           /* ثابت ومناسب */
+    top: 70px;           
     right: 20px;
-    width: 250px;        /* أكبر شوي من الموبايل */
+    width: 250px;       
     background: black;
     border-radius: 8px;
     text-align: center;
