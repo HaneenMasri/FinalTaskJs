@@ -40,7 +40,7 @@ async function getBlogs() {
 function validateTitle(title) {
   if (!title) return "Title is required.";
 if (/[0-9]/.test(title)) return "Title cannot contain numbers,only English letters and spaces.";
-if (/[^A-Za-z ]/.test(title)) return "Title cannot contain characters,Title only English letters and spaces.";
+if (/[^A-Za-z ]/.test(title)) return "no special characters allowed,Title can only contain letters and spaces.";
 if (title.length > 50) return "Title must be less than 50 characters.";
 if (!/^[A-Z]/.test(title)) return "Title must start with a capital letter.";
 return;
@@ -49,7 +49,7 @@ return;
 function validateDescription(desc) {
   if (!desc) return "Description is required.";
 if (/[0-9]/.test(desc)) return "Description cannot contain numbers,only English letters and spaces.";
-if (/[^A-Za-z ]/.test(desc)) return "Description cannot contain special characters, only English letters and spaces.";
+if (/[^A-Za-z ]/.test(desc)) return "no special characters allowed, only English letters and spaces.";
 if (desc.length > 1000) return "Description must be less than 1000 characters.";
 
 return;
