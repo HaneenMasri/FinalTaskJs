@@ -40,7 +40,7 @@ async function getBlogs() {
 function validateTitle(title) {
   if (!title) return "Title is required.";
 if (/[0-9]/.test(title)) return "Title cannot contain numbers,only English letters and spaces.";
-if (/[^A-Za-z ]/.test(title)) return "Title only English letters and spaces.";
+if (/[^A-Za-z ]/.test(title)) return "Title cannot contain characters,Title only English letters and spaces.";
 if (title.length > 50) return "Title must be less than 50 characters.";
 if (!/^[A-Z]/.test(title)) return "Title must start with a capital letter.";
 return;
@@ -66,27 +66,24 @@ blogForm.addEventListener("submit", async (e) => {
 titleError.textContent = "";
 descriptionError.textContent = "";
 
-// Validate inputs
 const titleMsg = validateTitle(title);
 const descMsg = validateDescription(description);
 
-// Show errors if موجودة
 if (titleMsg) titleError.textContent = titleMsg;
 if (descMsg) descriptionError.textContent = descMsg;
 
-// Stop form submission if هناك أي خطأ
 if (titleMsg || descMsg) return;
 
 
   // Submit blog
   await fetch(apiUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, description })
+    method: "POST",//to send new data to the server
+    headers: { "Content-Type": "application/json" },//we are sending JSON data
+    body: JSON.stringify({ title, description })//Convert the JS object into a JSON string to send
   });
 
   blogForm.reset();
-  getBlogs();
+  getBlogs();// Reload
 });
 
 // Initial load

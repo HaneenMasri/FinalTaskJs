@@ -1,11 +1,6 @@
 {
   "blogs": [
     {
-      "id": "da24",
-      "title": "My First Blog",
-      "description": "This is a simple description for my first blog post"
-    },
-    {
       "id": "2cd3",
       "title": "Hello World",
       "description": "Testing the second blog"
